@@ -58,20 +58,36 @@
     
     titleList.innerHTML = '';
     /* for each article */
+    let html = '' 
+
     const articles = document.querySelectorAll(optArticleSelector);
     for(let article of articles){
       console.log(article)
-    }
+    
     /* get the article id */
-
+    const articleId = article.getAttribute("id");
     /* find the title element */
-
+    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
     /* get the title from the title element */
 
     /* create HTML of the link */
+    const linkHTML = '"<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>"';
+    
+    //const linkHTMLData = {id: articleId, title: articleTitle};
+	  //const linkHTML = templates.articleLink(linkHTMLData);
+    console.log(linkHTML);
 
+    console.log(linkHTML);
     /* insert link into titleList */
+    html.insertAdjecentHTML('afterend', linkHTML);
 
+    html = html +linkHTML;
+    console.log(html);
+    }
+    titleList.innerHTML = html;
+
+   
 }
+
 
 generateTitleLinks();
