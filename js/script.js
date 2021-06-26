@@ -187,18 +187,14 @@ function generateTags(){
   for(let tag in allTags){
     /* [NEW] generate code of a link and add it to allTagsHTML */
     const tagsParam = '';
-    const tagLinkHTML = '<li>' + calculateTagClass(allTags[tag], tagsParam) + '</li>';
+    const tagLinkHTML = calculateTagClass(allTags[tag], tagsParams);
     console.log('tagLinkHTML:', tagLinkHTML);
     allTagsHTML += '<li><a class="' + tagLinkHTML + '" href="#tag-' + tag + '"><span>' + tag + '</a>' + '</span></li>';
     console.log('allTagsHTML: ', allTagsHTML);
     //const tagLinkHTML = calculateTagClass(allTags[tag], tagsParams);
     //console.log('tagLinkHTML:', tagLinkHTML);
 
-  // allTagsData.tags.push({
-    //  tag: tag,
-    //  count: allTags[tag],
-    //  className: calculateTagClass(allTags[tag], tagsParams)
-  // });
+
   }
   /* [NEW] END LOOP: for each tag in allTags: */
 
